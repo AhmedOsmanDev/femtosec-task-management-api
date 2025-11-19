@@ -1,0 +1,29 @@
+{
+  "name": "femtosec-task-management-api",
+  "version": "1.0.0",
+  "description": "Femto Security's Task Management API",
+  "homepage": "https://github.com/AhmedOsmanDev/femtosec-task-management-api#readme",
+  "bugs": {
+    "url": "https://github.com/AhmedOsmanDev/femtosec-task-management-api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AhmedOsmanDev/femtosec-task-management-api.git"
+  },
+  "license": "GPL-2.0",
+  "author": "ahmed.osman@tuta.io",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.20.0"
+  }
+}
