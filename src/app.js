@@ -2,7 +2,7 @@ import cors from 'cors';
 import express from 'express';
 import taskRoutes from './models/tasks/taskRoutes.js';
 import userRoutes from './models/users/userRoutes.js';
-import { errorHandler } from './shared/middlewares/errorMiddleware.js';
+import { errorHandler } from './shared/handlers/errorHandler.js';
 
 const app = express();
 
@@ -17,8 +17,8 @@ app.get('/', (req, res) => {
     });
 });
 
-app.use('/tasks', taskRoutes);
 app.use('/users', userRoutes);
+app.use('/tasks', taskRoutes);
 
 app.use(errorHandler);
 

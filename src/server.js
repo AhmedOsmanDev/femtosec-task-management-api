@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import app from './app.js';
 import { connectDatabase } from './database.js';
+import logger from './shared/logger.js';
 
 dotenv.config();
 
@@ -9,6 +10,6 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 connectDatabase(MONGODB_URI).then(() => {
     app.listen(PORT, () => {
-        console.log(`Server running on http://localhost:${PORT}`);
+        logger.info(`Server running on http://localhost:${PORT}`);
     });
 });

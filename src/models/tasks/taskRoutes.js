@@ -1,12 +1,12 @@
 import express from 'express';
 import { addTask, getTasks, updateTask, deleteTask } from './taskController.js';
-import { authMiddleware } from '../../shared/middlewares/authMiddleware.js';
+import { authHandler } from '../../shared/handlers/authHandler.js';
 
 const router = express.Router();
 
-router.post('/', authMiddleware, addTask);
-router.get('/', authMiddleware, getTasks);
-router.patch('/:id', authMiddleware, updateTask);
-router.delete('/:id', authMiddleware, deleteTask);
+router.post('/', authHandler, addTask);
+router.get('/', authHandler, getTasks);
+router.patch('/:id', authHandler, updateTask);
+router.delete('/:id', authHandler, deleteTask);
 
 export default router;

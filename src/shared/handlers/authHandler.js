@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-export const authMiddleware = (req, res, next) => {
+export const authHandler = (req, res, next) => {
     try {
         const authHeader = req.headers['authorization'];
         const token = authHeader?.split(' ')[1];
@@ -19,6 +19,6 @@ export const authMiddleware = (req, res, next) => {
         });
 
     } catch (error) {
-        res.status(500).json({ error: 'Authentication failed', details: error.message });
+        next(error);
     }
 };
